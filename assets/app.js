@@ -23,6 +23,8 @@
 
   var state = { au: "", s: "", k: "", q: "", size: "s" };
   var featured = ENTRIES[0];
+  var HIVOL_MIN = 10; // an author with more entries than this is highlighted as high-volume
+  var openEras = {};  // era name -> whether its collapsible tab group is expanded
 
   var $ = function (id) { return document.getElementById(id); };
 
@@ -60,16 +62,35 @@
 
   /* ---------- rendering ---------- */
 
+  function entryCount(auId) {
+    return ENTRIES.filter(function (e) { return e.au === auId; }).length;
+  }
+
+  function currentEra() {
+    var auId = state.au || (featured && featured.au);
+    var a = auId ? byId[auId] : null;
+    return a ? a.era : null;
+  }
+
   function paintFeatured() {
     var host = $("featured");
     clear(host);
     if (!featured) return;
     var au = byId[featured.au];
-    host.className = "featured a-" + featured.au;
+    var hivol = entryCount(featured.au) > HIVOL_MIN;
+    var cls = "featured a-" + featured.au;
+    if (au.era === "Diaspora thought") cls += " kente";
+    if (hivol) cls += " hivol";
+    host.className = cls;
 
     var head = el("div", "featured-head");
     head.appendChild(el("span", "who", au.name));
     head.appendChild(el("span", null, featured.s));
+    if (hivol) {
+      var badge = el("span", "badge", "Extensive");
+      badge.title = "More than " + HIVOL_MIN + " entries from this thinker";
+      head.appendChild(badge);
+    }
     head.appendChild(el("span", "grow"));
     head.appendChild(el("span", null, featured.id));
     host.appendChild(head);
@@ -102,24 +123,42 @@
     allRow.appendChild(allWrap);
     host.appendChild(allRow);
 
+    var curEra = currentEra();
+
     ERAS.forEach(function (era) {
       var members = AUTHORS.filter(function (a) {
         return a.era === era && ENTRIES.some(function (e) { return e.au === a.id; });
       });
       if (!members.length) return;
 
-      var group = el("div", "tab-group");
-      group.appendChild(el("h3", null, era));
+      if (!Object.prototype.hasOwnProperty.call(openEras, era)) {
+        openEras[era] = era === curEra;
+      }
+
+      var group = el("details", "tab-group era-group");
+      group.open = openEras[era];
+      group.addEventListener("toggle", function () { openEras[era] = group.open; });
+
+      var summary = el("summary", null);
+      summary.appendChild(el("h3", null, era));
+      group.appendChild(summary);
+
       var row = el("div", "tab-row");
       members.forEach(function (a) {
-        var n = ENTRIES.filter(function (e) { return e.au === a.id; }).length;
-        var b = el("button", "tab a-" + a.id);
+        var n = entryCount(a.id);
+        var hivol = n > HIVOL_MIN;
+        var b = el("button", "tab a-" + a.id + (hivol ? " tab-hivol" : ""));
         b.type = "button";
         b.dataset.au = a.id;
         b.title = a.name + " (" + a.years + ") \u2014 " + a.note;
         b.setAttribute("aria-pressed", String(state.au === a.id));
         b.appendChild(el("span", null, a.name));
         b.appendChild(el("span", "c", n));
+        if (hivol) {
+          var badge = el("span", "badge", "More");
+          badge.title = "More than " + HIVOL_MIN + " entries";
+          b.appendChild(badge);
+        }
         row.appendChild(b);
       });
       group.appendChild(row);
