@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Practical Almanac — 60 daily affirmations after Jim Rohn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2F4EC;
+    --bar:#DFE8D4;
+    --card:#FBFCF7;
+    --ink:#1D2B24;
+    --ink-soft:#54665A;
+    --rule:#B4C3AC;
+    --rule-hair:#D3DECB;
+    --red:#8E2A1E;
+    --blue:#2B4A62;
+    --display:"Zilla Slab", Rockwell, "Courier Bold", Georgia, serif;
+    --body:"Newsreader", Georgia, "Times New Roman", serif;
+    --mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--body); font-size:17px; line-height:1.55;
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:0 20px 80px}
+
+  /* ---------- masthead ---------- */
+  .masthead{padding:44px 0 0; text-align:center}
+  .masthead .eyebrow{
+    font-family:var(--mono); font-size:11px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink-soft);
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:700; margin:.28em 0 .1em;
+    font-size:clamp(38px,7.5vw,74px); line-height:.95; letter-spacing:-.015em;
+  }
+  .masthead h1 em{font-style:normal; color:var(--red)}
+  .masthead .standfirst{
+    max-width:44ch; margin:14px auto 0; color:var(--ink-soft); font-size:17px;
+  }
+  .rule-double{border:0; border-top:3px solid var(--ink); border-bottom:1px solid var(--ink); height:4px; margin:26px 0 0}
+
+  /* ---------- today ---------- */
+  .today{
+    background:var(--card); border:1px solid var(--rule); border-top:5px solid var(--red);
+    padding:30px 30px 26px; margin:30px 0 44px; position:relative;
+  }
+  .today-head{
+    display:flex; flex-wrap:wrap; gap:10px 16px; align-items:baseline;
+    font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-soft); border-bottom:1px solid var(--rule-hair); padding-bottom:12px;
+  }
+  .today-head .stamp{color:var(--red); font-weight:500}
+  .today-head .spacer{flex:1}
+  .today blockquote{
+    margin:22px 0 0; font-family:var(--display); font-weight:500;
+    font-size:clamp(22px,3.4vw,33px); line-height:1.24; letter-spacing:-.01em;
+  }
+  .today .practice{margin-top:18px; max-width:70ch}
+  .practice b{
+    font-family:var(--mono); font-size:10.5px; font-weight:500; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--red); display:block; margin-bottom:3px;
+  }
+  .today .after{
+    margin-top:16px; font-family:var(--mono); font-size:11px; color:var(--ink-soft);
+  }
+
+  /* ---------- controls ---------- */
+  .controls{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-bottom:14px}
+  .search{
+    flex:1 1 260px; display:flex; align-items:center; gap:10px;
+    background:var(--card); border:1px solid var(--rule); padding:11px 14px;
+  }
+  .search input{
+    border:0; background:transparent; flex:1; font-family:var(--body);
+    font-size:16px; color:var(--ink); outline:none; min-width:0;
+  }
+  .search label{font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft)}
+  .btn{
+    font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    background:transparent; border:1px solid var(--rule); color:var(--ink-soft);
+    padding:11px 14px; cursor:pointer;
+  }
+  .btn:hover{border-color:var(--ink); color:var(--ink)}
+
+  /* ---------- two column ---------- */
+  .cols{display:grid; grid-template-columns:236px 1fr; gap:38px; align-items:start}
+  @media (max-width:820px){ .cols{grid-template-columns:1fr; gap:26px} }
+
+  .index{position:sticky; top:20px}
+  @media (max-width:820px){ .index{position:static} }
+  .index h2{
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--ink-soft); margin:0 0 10px; padding-bottom:8px; border-bottom:1px solid var(--ink);
+    font-weight:500;
+  }
+  .index h2 + h2{margin-top:32px}
+  .subject-list{list-style:none; margin:0; padding:0}
+  .subject-list li{border-bottom:1px solid var(--rule-hair)}
+  .subj{
+    width:100%; text-align:left; background:none; border:0; cursor:pointer;
+    padding:8px 0; display:flex; gap:10px; align-items:baseline;
+    font-family:var(--body); font-size:15.5px; color:var(--ink);
+  }
+  .subj .n{font-family:var(--mono); font-size:11px; color:var(--ink-soft); flex:0 0 auto}
+  .subj .nm{flex:1}
+  .subj:hover .nm{color:var(--red)}
+  .subj[aria-pressed="true"] .nm{color:var(--red); font-weight:500}
+  .subj[aria-pressed="true"] .n{color:var(--red)}
+
+  .kw-cloud{display:flex; flex-wrap:wrap; gap:5px; max-height:46vh; overflow-y:auto; padding-right:4px}
+  @media (max-width:820px){ .kw-cloud{max-height:180px} }
+  .kw{
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.04em;
+    background:transparent; border:1px solid var(--rule-hair); color:var(--ink-soft);
+    padding:4px 7px; cursor:pointer;
+  }
+  .kw:hover{border-color:var(--red); color:var(--red)}
+  .kw[aria-pressed="true"]{background:var(--blue); border-color:var(--blue); color:#fff}
+
+  /* ---------- entries ---------- */
+  .status{
+    font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-soft); padding-bottom:10px; border-bottom:3px solid var(--ink);
+    display:flex; flex-wrap:wrap; gap:12px; align-items:baseline;
+  }
+  .status .clear{
+    font:inherit; background:none; border:0; color:var(--red); cursor:pointer;
+    text-decoration:underline; text-underline-offset:3px; padding:0;
+  }
+  .entries{list-style:none; margin:0; padding:0}
+  .entry{
+    display:grid; grid-template-columns:52px 1fr; gap:0 18px;
+    padding:20px 16px 18px 12px; border-bottom:1px solid var(--rule-hair);
+    scroll-margin-top:16px;
+  }
+  .entry:nth-child(odd){background:var(--bar)}
+  .entry:target{outline:2px solid var(--red); outline-offset:-2px}
+  .entry .no{
+    font-family:var(--mono); font-size:13px; font-weight:500; color:var(--red);
+    padding-top:4px;
+  }
+  .entry .cat{
+    font-family:var(--mono); font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-soft); margin-bottom:6px;
+  }
+  .entry .aff{
+    font-family:var(--display); font-weight:500; font-size:20px; line-height:1.32;
+    margin:0 0 12px; max-width:62ch;
+  }
+  .entry .practice{font-size:15.5px; color:var(--ink-soft); max-width:66ch; margin-bottom:12px}
+  .entry .practice span{color:var(--ink)}
+  .entry .foot{display:flex; flex-wrap:wrap; gap:6px; align-items:center}
+  .entry .src{
+    font-family:var(--mono); font-size:10px; color:var(--ink-soft);
+    border-left:2px solid var(--rule); padding-left:8px; margin-right:auto;
+  }
+  .copy{
+    font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+    background:none; border:1px solid var(--rule); color:var(--ink-soft);
+    padding:4px 8px; cursor:pointer;
+  }
+  .copy:hover{border-color:var(--ink); color:var(--ink)}
+  .empty{padding:44px 4px; color:var(--ink-soft); max-width:52ch}
+  .empty strong{font-family:var(--display); font-size:20px; display:block; margin-bottom:6px; color:var(--ink)}
+
+  footer{
+    margin-top:56px; padding-top:20px; border-top:1px solid var(--rule);
+    font-family:var(--mono); font-size:11px; line-height:1.8; color:var(--ink-soft);
+    max-width:76ch;
+  }
+  footer a{color:var(--blue)}
+  a:focus-visible, button:focus-visible, input:focus-visible{outline:2px solid var(--blue); outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){ *{transition:none !important} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">Sixty entries &middot; twelve subjects &middot; one a day</div>
+    <h1>The Practical <em>Almanac</em></h1>
+    <p class="standfirst">Daily affirmations distilled from the business philosophy of Jim Rohn. Search it, filter it, or just take today's.</p>
+    <hr class="rule-double">
+  </header>
+
+  <section class="today" id="today" aria-labelledby="today-h">
+    <div class="today-head">
+      <span class="stamp" id="today-date"></span>
+      <span id="today-cat"></span>
+      <span class="spacer"></span>
+      <span id="today-no"></span>
+    </div>
+    <blockquote id="today-h"></blockquote>
+    <p class="practice"><b>The practice</b><span id="today-practice"></span></p>
+    <p class="after" id="today-src"></p>
+  </section>
+
+  <div class="controls">
+    <div class="search">
+      <label for="q">Find</label>
+      <input id="q" type="search" placeholder="winter, money, procrastination, mentors&hellip;" autocomplete="off">
+    </div>
+    <button class="btn" id="shuffle">Give me another</button>
+  </div>
+
+  <div class="cols">
+    <nav class="index" aria-label="Index">
+      <h2>By subject</h2>
+      <ul class="subject-list" id="subjects"></ul>
+      <h2>By keyword</h2>
+      <div class="kw-cloud" id="keywords"></div>
+    </nav>
+
+    <main>
+      <div class="status">
+        <span id="count"></span>
+        <span id="scope"></span>
+        <button class="clear" id="clear" hidden>Clear filters</button>
+      </div>
+      <ul class="entries" id="entries"></ul>
+      <div class="empty" id="empty" hidden>
+        <strong>Nothing under that heading.</strong>
+        Try a broader word, or pick a subject from the index on the left.
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p><strong>On sourcing.</strong> These sixty affirmations are original wordings written to carry Jim Rohn's principles, not reproductions of his quotations, which remain the copyright of his estate. Each entry names the concept it derives from. For his actual words, seminars and books, go to the official archive at <a href="https://www.jimrohn.com/wisdom/concepts">jimrohn.com/wisdom/concepts</a>.</p>
+    <p><strong>On linking.</strong> Every view has an address. Filter or search and the address bar updates &mdash; copy it and you'll send someone straight to that slice. Individual entries link as <code>#e=17</code>.</p>
+  </footer>
+
+</div>
+
+<script>
+const DATA = [
+  {n:1,s:"Philosophy",a:"I set the sail rather than argue with the wind; my thinking, not my circumstances, decides where I land.",p:"Write down one belief you hold about money, work or people, and ask whether it has ever produced a result you actually wanted.",k:["mindset","responsibility","circumstances","set of the sail"],src:"After the 'set of the sail' teaching"},
+  {n:2,s:"Philosophy",a:"I own my results completely \u2014 no blaming the weather, the market, or anyone else in the room.",p:"Take one complaint you made this week and rewrite it as a decision only you can make.",k:["responsibility","ownership","blame","accountability"],src:"After Rohn on personal responsibility"},
+  {n:3,s:"Philosophy",a:"What I believe shapes how I feel, how I feel shapes what I do, and what I do shows up in what I have.",p:"Trace one result you're unhappy with backwards \u2014 through activity, through attitude \u2014 until you find the belief it started from.",k:["philosophy","attitude","activity","results","five major pieces"],src:"After The Five Major Pieces to the Life Puzzle"},
+  {n:4,s:"Philosophy",a:"If I don't design a plan for my life, I'll spend it inside somebody else's.",p:"Block one hour this week with a blank page and write what you want the next three years to look like.",k:["life plan","design","intention","drift"],src:"After Rohn on designing your own life plan"},
+  {n:5,s:"Philosophy",a:"Change starts with me, not with my conditions; when I become different, everything downstream changes too.",p:"Name the one habit that, if it changed, would change the most other things \u2014 and start it today.",k:["change","growth","becoming","transformation"],src:"After 'for things to change, you have to change'"},
+
+  {n:6,s:"Attitude",a:"I refuse to beat myself with my past; I take the lesson and leave the weight.",p:"Write down one failure, then write the single sentence you learned from it, and close the book on the rest.",k:["past","regret","forgiveness","learning"],src:"After Rohn on how you feel about the past"},
+  {n:7,s:"Attitude",a:"I stand guard at the door of my mind and choose deliberately what gets in.",p:"Cut one input today \u2014 a feed, a show, a conversation \u2014 that reliably leaves you smaller.",k:["input","media","guard","mindset"],src:"After 'stand guard at the door of your mind'"},
+  {n:8,s:"Attitude",a:"Gratitude is a discipline, not a mood; I practise it hardest on the days it doesn't arrive on its own.",p:"List three things you would genuinely miss if they vanished tonight.",k:["gratitude","discipline","mood","perspective"],src:"After Rohn on attitude and appreciation"},
+  {n:9,s:"Attitude",a:"I hold a good opinion of other people, because it takes everybody else to make a market.",p:"Say one specific, true, appreciative thing to someone today without being asked.",k:["people","generosity","relationships","market"],src:"After Rohn on how you feel about everybody else"},
+  {n:10,s:"Attitude",a:"How I feel about the future is a choice, and I choose expectancy over dread.",p:"Write one sentence describing a future you'd be glad to walk into, and read it again tomorrow morning.",k:["optimism","future","expectancy","fear"],src:"After Rohn on how you feel about the future"},
+
+  {n:11,s:"Discipline",a:"I pay in ounces now so I don't pay in tons later; discipline is simply the cheaper of the two pains.",p:"Identify the task you're avoiding and give it the next twenty minutes.",k:["discipline","regret","pain","procrastination"],src:"After the two pains: discipline and regret"},
+  {n:12,s:"Discipline",a:"Success is a handful of small things done every day, not one heroic thing done once.",p:"Pick a single daily action you could sustain for ninety days, and do it today.",k:["habits","consistency","daily","small things"],src:"After 'a few simple disciplines practised every day'"},
+  {n:13,s:"Discipline",a:"Motivation gets me moving; habit is what keeps me moving once the feeling wears off.",p:"Attach the habit you want to one you already do without thinking.",k:["motivation","habit","momentum","routine"],src:"After Rohn on motivation versus habit"},
+  {n:14,s:"Discipline",a:"Every disciplined act pays me twice \u2014 in the result, and in who I become while earning it.",p:"Notice one compounding benefit from a discipline you already keep.",k:["reward","compounding","character","effort"],src:"After 'for every disciplined effort there is a multiple reward'"},
+  {n:15,s:"Discipline",a:"I don't wish the work were easier; I get better at the work.",p:"Name one skill that would make your hardest task routine, and spend thirty minutes on it.",k:["skill","difficulty","growth","competence"],src:"After 'don't wish it were easier, wish you were better'"},
+
+  {n:16,s:"Self-Education",a:"School gave me a living; what I read after school decides the rest.",p:"Start a book today that someone you admire would recommend.",k:["reading","books","education","learning"],src:"After Rohn on formal versus self-education"},
+  {n:17,s:"Self-Education",a:"I keep a journal, because a life worth living is worth the trouble of recording.",p:"Write half a page tonight: what happened, what it cost, what it taught you.",k:["journal","reflection","record","writing"],src:"After Rohn on keeping a journal"},
+  {n:18,s:"Self-Education",a:"I learn from other people's experience so I don't have to buy every lesson at full price.",p:"Ask someone who has already done the thing you're attempting what they'd do differently.",k:["mentors","experience","advice","shortcuts"],src:"After Rohn on not learning only from your own experience"},
+  {n:19,s:"Self-Education",a:"My success rarely climbs higher than my personal development, so I work on the developer.",p:"Spend thirty minutes on yourself before you spend eight hours on your job.",k:["personal development","self-improvement","ceiling","growth"],src:"After 'work harder on yourself than you do on your job'"},
+  {n:20,s:"Self-Education",a:"I'd rather be a student than be right; curiosity outperforms certainty over any long stretch.",p:"Find one strongly held opinion and go read the best argument against it.",k:["curiosity","humility","learning","open mind"],src:"After Rohn on lifelong learning"},
+
+  {n:21,s:"Goals",a:"The real value of a goal isn't what I get; it's who I have to become to get it.",p:"Write beside your biggest goal the kind of person who achieves it \u2014 then start being that person.",k:["goals","becoming","achievement","character"],src:"After 'what it makes of you is the greater value'"},
+  {n:22,s:"Goals",a:"Vague wishes produce vague results; I write mine down where I can be held to them.",p:"Convert one wish into a written goal with a date attached.",k:["clarity","writing","specificity","wishes"],src:"After Rohn on the art of setting goals"},
+  {n:23,s:"Goals",a:"I set goals big enough to be interesting and near enough to be believed.",p:"Set one goal for this month and one for the next five years, on the same page.",k:["ambition","horizon","planning","belief"],src:"After Rohn on long- and short-range goals"},
+  {n:24,s:"Goals",a:"Without urgency, wanting something is just a hobby.",p:"Give one goal a deadline this week and tell someone about it.",k:["urgency","deadlines","desire","action"],src:"After 'without a sense of urgency, desire loses its value'"},
+  {n:25,s:"Goals",a:"I review my goals often enough that they steer me rather than decorate a drawer.",p:"Put a recurring fifteen minutes in your calendar to reread what you're aiming at.",k:["review","focus","direction","consistency"],src:"After Rohn on reviewing goals"},
+
+  {n:26,s:"Time",a:"Either I run the day or the day runs me, so I decide before the noise starts.",p:"Choose tomorrow's three most important tasks tonight, before you sleep.",k:["time management","planning","priorities","mornings"],src:"After 'either you run the day or the day runs you'"},
+  {n:27,s:"Time",a:"Days are expensive: every one I spend is one I no longer have to spend.",p:"Count how many hours today went to something you'd defend out loud.",k:["time","cost","awareness","waste"],src:"After 'days are expensive'"},
+  {n:28,s:"Time",a:"I refuse to spend major time on minor things.",p:"Find the lowest-value task on today's list and delete it rather than do it.",k:["priorities","focus","trivia","elimination"],src:"After 'don't spend major time on minor things'"},
+  {n:29,s:"Time",a:"I give full attention to whoever is in front of me \u2014 it's one of the better gifts I have to hand out.",p:"Put the phone face-down for the length of one conversation today.",k:["attention","presence","relationships","focus"],src:"After Rohn on the gift of attention"},
+  {n:30,s:"Time",a:"Busy is not the same as productive; I measure results, not motion.",p:"At day's end, write what actually moved forward \u2014 not what you touched.",k:["productivity","busyness","results","measurement"],src:"After Rohn on activity and results"},
+
+  {n:31,s:"Sowing & Reaping",a:"I get paid for the value I bring, so I spend my energy becoming more valuable.",p:"Ask what your work would be worth if it were twice as good, then do one thing to close that gap.",k:["value","marketplace","worth","income"],src:"After 'we get paid for bringing value to the marketplace'"},
+  {n:32,s:"Sowing & Reaping",a:"Nobody harvests what they never planted, so I stop waiting and start sowing.",p:"Plant one seed today \u2014 a call, an application, a first draft \u2014 with no promise of immediate return.",k:["sowing","reaping","cause and effect","patience"],src:"After the law of sowing and reaping"},
+  {n:33,s:"Sowing & Reaping",a:"The harvest is honest: it reports exactly what I did, not what I intended.",p:"Look at one disappointing result and name the input that produced it, without excuses.",k:["results","honesty","feedback","accountability"],src:"After Rohn on the harvest as a report card"},
+  {n:34,s:"Sowing & Reaping",a:"I sow generously, because the size of the harvest follows the size of the planting.",p:"Do more than the minimum on one task today, purely because you chose to.",k:["generosity","effort","abundance","extra mile"],src:"After the law of sowing and reaping"},
+  {n:35,s:"Sowing & Reaping",a:"Some of what I plant won't come up, and I plant anyway \u2014 that's the arithmetic of every harvest.",p:"Send the message, make the pitch, take the shot you've been rationing.",k:["risk","rejection","persistence","numbers"],src:"After Rohn on the parable of the sower"},
+
+  {n:36,s:"Seasons & Adversity",a:"I can't change the seasons, but I can change the person who has to meet them.",p:"Name which season you're in right now, and what that season is actually asking of you.",k:["seasons","adversity","change","self"],src:"After 'you cannot change the seasons, but you can change yourself'"},
+  {n:37,s:"Seasons & Adversity",a:"Winters arrive on schedule, so I prepare in summer instead of hoping in autumn.",p:"Build one reserve today \u2014 savings, a skill, a relationship \u2014 for a winter you can't yet see.",k:["winter","preparation","resilience","foresight"],src:"After the Ant Philosophy: think winter all summer"},
+  {n:38,s:"Seasons & Adversity",a:"In the cold I remind myself this doesn't last, and I'm ready to move on the first warm day.",p:"Write down the first thing you'll do when the current hard stretch breaks.",k:["hope","patience","endurance","recovery"],src:"After the Ant Philosophy: think summer all winter"},
+  {n:39,s:"Seasons & Adversity",a:"When something blocks my way I go over, under, or around \u2014 but I don't stop looking for the way.",p:"List three alternative routes to the goal you've decided is blocked.",k:["persistence","obstacles","ant philosophy","resourcefulness"],src:"After the Ant Philosophy: ants never quit"},
+  {n:40,s:"Seasons & Adversity",a:"Spring is short and it doesn't wait; while the ground is soft, I plant.",p:"Act on the opportunity you've been 'thinking about' before this week ends.",k:["opportunity","timing","urgency","spring"],src:"After 'learn how to take advantage of the spring'"},
+
+  {n:41,s:"Associations",a:"I become the average of the company I keep, so I choose my circle on purpose.",p:"List the five people you spend the most time with and ask honestly where each is taking you.",k:["circle","influence","friends","average"],src:"After 'the average of the five people you spend the most time with'"},
+  {n:42,s:"Associations",a:"I don't join easy crowds; I go where the standard is high enough to stretch me.",p:"Find one room \u2014 a group, a class, a team \u2014 where you're not the most capable person present.",k:["standards","crowds","growth","environment"],src:"After 'don't join an easy crowd, you won't grow'"},
+  {n:43,s:"Associations",a:"Some people I spend less time with, some more, and some not at all \u2014 that's a decision, not a verdict.",p:"Reduce time with one relationship that consistently costs more than it gives.",k:["boundaries","relationships","choice","disassociation"],src:"After Rohn on association and disassociation"},
+  {n:44,s:"Associations",a:"I look for people who've already walked where I'm heading, and I ask them questions.",p:"Reach out to one person ahead of you and ask for twenty minutes.",k:["mentors","guidance","questions","network"],src:"After Rohn on mentorship, and his own mentor J. Earl Shoaff"},
+  {n:45,s:"Associations",a:"I try to be, for somebody else, the influence I was lucky enough to receive.",p:"Offer specific help to one person coming up behind you.",k:["mentoring","service","giving back","leadership"],src:"After Rohn on passing the philosophy on"},
+
+  {n:46,s:"Money",a:"I live on seventy percent of what I earn and give the other thirty a job: giving, investing, saving.",p:"Work out what seventy percent of your take-home actually is, and what the rest is currently doing.",k:["70/30 rule","budgeting","saving","money"],src:"After the 70/30 rule"},
+  {n:47,s:"Money",a:"Wages keep me; what I build for myself is what makes me.",p:"Spend one hour this week on something you own rather than something you're paid for.",k:["profits","wages","ownership","side project"],src:"After 'profits are better than wages'"},
+  {n:48,s:"Money",a:"I give first, before it's comfortable \u2014 generosity is a habit, not a byproduct of surplus.",p:"Give something away this week at a scale you actually notice.",k:["giving","generosity","charity","habit"],src:"After the 70/30 rule and Rohn on giving"},
+  {n:49,s:"Money",a:"Money follows value, so I stop asking to be paid more and start becoming worth more.",p:"Identify the single skill that would most raise your market value, and book time for it.",k:["value","earnings","skills","worth"],src:"After Rohn on value and the marketplace"},
+  {n:50,s:"Money",a:"If I can't manage a little well, more won't fix it \u2014 capability comes before capacity.",p:"Track every pound you spend for the next seven days without changing anything else.",k:["management","discipline","tracking","capability"],src:"After Rohn on becoming a millionaire before you keep the million"},
+
+  {n:51,s:"Communication",a:"I practise how I speak on ordinary days so the skill is there on the day it matters.",p:"Say one thing today more clearly and more briefly than you normally would.",k:["communication","practice","clarity","speaking"],src:"After Rohn on practising your communication skills"},
+  {n:52,s:"Communication",a:"I aim to be strong without being rude, and kind without being weak.",p:"Deliver one honest piece of feedback today with more care than usual.",k:["leadership","strength","kindness","balance"],src:"After the challenge of leadership passage"},
+  {n:53,s:"Communication",a:"Leadership is the decision to be more than average \u2014 first in myself, then for anybody else.",p:"Raise your own standard on one task before you ask anyone else to raise theirs.",k:["leadership","standards","example","average"],src:"After Rohn on leadership as the challenge to be more than average"},
+  {n:54,s:"Communication",a:"I lead by attraction rather than pressure; people follow what they'd quite like to become.",p:"Do the thing you'd want your team, your family or your friends to do, without mentioning that you did it.",k:["example","influence","attraction","integrity"],src:"After Rohn on leadership by example"},
+  {n:55,s:"Communication",a:"I listen for what the other person actually needs, not for my turn to talk.",p:"In your next conversation, ask two questions before you make a statement.",k:["listening","questions","empathy","conversation"],src:"After Rohn on the gift of attention"},
+
+  {n:56,s:"Lifestyle & Health",a:"I take care of my body; it's the only place I have to live.",p:"Move for thirty minutes today, at whatever intensity you'll actually repeat tomorrow.",k:["health","body","exercise","care"],src:"After 'take care of your body, it's the only place you have to live'"},
+  {n:57,s:"Lifestyle & Health",a:"Wealth with no life to spend it on is just a number; I design the living as carefully as the earning.",p:"Put one thing in the diary this month that exists purely to be enjoyed.",k:["lifestyle","balance","enjoyment","design"],src:"After Rohn on lifestyle as the art of living well"},
+  {n:58,s:"Lifestyle & Health",a:"I make room for what feeds me \u2014 music, art, travel, good conversation \u2014 because a life needs texture.",p:"Book, borrow or plan one cultural thing you've been meaning to get to.",k:["culture","art","travel","texture"],src:"After Rohn on culture and sophistication"},
+  {n:59,s:"Lifestyle & Health",a:"Sharing what I've gathered is rather the point of gathering it.",p:"Pass on something you know to someone who could use it, today.",k:["sharing","generosity","contribution","purpose"],src:"After Rohn on sharing your bounty"},
+  {n:60,s:"Lifestyle & Health",a:"I want to be remembered for the character I built, not the fingerprints I was issued.",p:"Name the one trait you'd want said about you, and do one thing today that earns it.",k:["character","legacy","integrity","identity"],src:"After Rohn on character as something you form"}
+];
+
+const SUBJECTS = [...new Set(DATA.map(d => d.s))];
+const ALL_KW = [...new Set(DATA.flatMap(d => d.k))].sort((a, b) => a.localeCompare(b));
+
+const el = id => document.getElementById(id);
+let state = { q: "", s: "", k: "" };
+
+/* ---------- today ---------- */
+function dayIndex(d = new Date()) {
+  const start = new Date(d.getFullYear(), 0, 0);
+  return Math.floor((d - start) / 86400000);
+}
+let todayEntry = DATA[dayIndex() % DATA.length];
+
+function paintToday() {
+  el("today-date").textContent = new Date().toLocaleDateString(undefined,
+    { weekday: "long", day: "numeric", month: "long" });
+  el("today-cat").textContent = todayEntry.s;
+  el("today-no").textContent = "Entry " + String(todayEntry.n).padStart(2, "0");
+  el("today-h").textContent = todayEntry.a;
+  el("today-practice").textContent = todayEntry.p;
+  el("today-src").textContent = todayEntry.src;
+}
+
+el("shuffle").addEventListener("click", () => {
+  let next;
+  do { next = DATA[Math.floor(Math.random() * DATA.length)]; } while (next === todayEntry);
+  todayEntry = next;
+  paintToday();
+});
+
+/* ---------- index ---------- */
+function buildIndex() {
+  el("subjects").innerHTML = SUBJECTS.map(s => {
+    const c = DATA.filter(d => d.s === s).length;
+    return `<li><button class="subj" data-s="${s}" aria-pressed="false">
+      <span class="nm">${s}</span><span class="n">${c}</span></button></li>`;
+  }).join("");
+
+  el("keywords").innerHTML = ALL_KW.map(k =>
+    `<button class="kw" data-k="${k}" aria-pressed="false">${k}</button>`).join("");
+
+  el("subjects").addEventListener("click", e => {
+    const b = e.target.closest(".subj");
+    if (!b) return;
+    state.s = state.s === b.dataset.s ? "" : b.dataset.s;
+    state.k = "";
+    sync();
+  });
+  el("keywords").addEventListener("click", e => {
+    const b = e.target.closest(".kw");
+    if (!b) return;
+    state.k = state.k === b.dataset.k ? "" : b.dataset.k;
+    sync();
+  });
+}
+
+/* ---------- filtering ---------- */
+function matches(d) {
+  if (state.s && d.s !== state.s) return false;
+  if (state.k && !d.k.includes(state.k)) return false;
+  if (state.q) {
+    const hay = (d.a + " " + d.p + " " + d.s + " " + d.k.join(" ") + " " + d.src).toLowerCase();
+    if (!state.q.toLowerCase().split(/\s+/).every(t => hay.includes(t))) return false;
+  }
+  return true;
+}
+
+function render() {
+  const list = DATA.filter(matches);
+
+  el("entries").innerHTML = list.map(d => `
+    <li class="entry" id="e${d.n}">
+      <div class="no">${String(d.n).padStart(2, "0")}</div>
+      <div>
+        <div class="cat">${d.s}</div>
+        <p class="aff">${d.a}</p>
+        <p class="practice"><b>The practice</b><span>${d.p}</span></p>
+        <div class="foot">
+          <span class="src">${d.src}</span>
+          ${d.k.map(k => `<button class="kw" data-k="${k}" aria-pressed="${state.k === k}">${k}</button>`).join("")}
+          <button class="copy" data-copy="${d.n}">Copy</button>
+        </div>
+      </div>
+    </li>`).join("");
+
+  el("empty").hidden = list.length > 0;
+  el("count").textContent = list.length + (list.length === 1 ? " entry" : " entries");
+
+  const bits = [];
+  if (state.s) bits.push("subject: " + state.s);
+  if (state.k) bits.push("keyword: " + state.k);
+  if (state.q) bits.push('search: "' + state.q + '"');
+  el("scope").textContent = bits.join("  \u00b7  ");
+  el("clear").hidden = bits.length === 0;
+
+  document.querySelectorAll(".subj").forEach(b =>
+    b.setAttribute("aria-pressed", String(b.dataset.s === state.s)));
+  document.querySelectorAll("#keywords .kw").forEach(b =>
+    b.setAttribute("aria-pressed", String(b.dataset.k === state.k)));
+}
+
+/* ---------- hash as address ---------- */
+function writeHash() {
+  const p = new URLSearchParams();
+  if (state.s) p.set("s", state.s);
+  if (state.k) p.set("k", state.k);
+  if (state.q) p.set("q", state.q);
+  const h = p.toString();
+  history.replaceState(null, "", h ? "#" + h : location.pathname + location.search);
+}
+
+function readHash() {
+  const raw = location.hash.slice(1);
+  if (!raw) return false;
+  const p = new URLSearchParams(raw);
+  if (p.has("e")) {
+    const target = document.getElementById("e" + p.get("e"));
+    if (target) target.scrollIntoView({ block: "center" });
+    return true;
+  }
+  state.s = p.get("s") || "";
+  state.k = p.get("k") || "";
+  state.q = p.get("q") || "";
+  el("q").value = state.q;
+  return true;
+}
+
+function sync() { render(); writeHash(); }
+
+/* ---------- wiring ---------- */
+el("q").addEventListener("input", e => { state.q = e.target.value.trim(); sync(); });
+el("clear").addEventListener("click", () => {
+  state = { q: "", s: "", k: "" };
+  el("q").value = "";
+  sync();
+});
+
+el("entries").addEventListener("click", e => {
+  const kw = e.target.closest(".kw");
+  if (kw) { state.k = state.k === kw.dataset.k ? "" : kw.dataset.k; sync(); return; }
+
+  const cp = e.target.closest(".copy");
+  if (cp) {
+    const d = DATA.find(x => x.n === Number(cp.dataset.copy));
+    navigator.clipboard.writeText(d.a).then(() => {
+      cp.textContent = "Copied";
+      setTimeout(() => { cp.textContent = "Copy"; }, 1400);
+    }).catch(() => { cp.textContent = "Select it"; });
+  }
+});
+
+buildIndex();
+paintToday();
+readHash();
+render();
+</script>
+</body>
+</html>

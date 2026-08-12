@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Daily affirmations distilled from the ideas of thirteen thinkers, cross-indexed by subject and keyword.">
+<title>Digital Distillation</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="kicker">The Digital Distillation Project</p>
+    <h1>Working ideas, one a day</h1>
+    <p>Affirmations distilled from the documented ideas of thirteen thinkers. Pick a thinker, search the index, or take whatever today hands you.</p>
+    <hr class="rule-heavy">
+  </header>
+
+  <nav id="tabs" class="tabs" aria-label="Thinkers"></nav>
+
+  <section id="featured" class="featured" aria-labelledby="featured-text"></section>
+
+  <div class="controls">
+    <div class="field">
+      <label for="q">Find</label>
+      <input id="q" type="search" placeholder="fear, money, discipline, listening&hellip;" autocomplete="off" spellcheck="false">
+    </div>
+    <button class="btn" id="shuffle" type="button">Give me another</button>
+    <div class="sizer" id="sizer" role="group" aria-label="Text size">
+      <span class="lbl">Text</span>
+      <button type="button" class="s1" data-size="s" aria-pressed="true" aria-label="Standard text size">A</button>
+      <button type="button" class="s2" data-size="l" aria-pressed="false" aria-label="Large text size">A</button>
+      <button type="button" class="s3" data-size="xl" aria-pressed="false" aria-label="Larger text size">A</button>
+    </div>
+  </div>
+
+  <div class="cols">
+    <nav class="side" aria-label="Index">
+      <h2>By subject</h2>
+      <ul class="pick-list" id="subjects"></ul>
+      <h2 class="later">By keyword</h2>
+      <div class="cloud" id="keywords"></div>
+    </nav>
+
+    <main>
+      <div class="status">
+        <span id="count"></span>
+        <span id="scope"></span>
+        <button class="clear" id="clear" type="button" hidden>Clear filters</button>
+      </div>
+      <ul class="entries" id="entries"></ul>
+      <div class="empty" id="empty" hidden>
+        <strong>Nothing under that heading.</strong>
+        Try a broader word, clear the filters, or switch to All thinkers.
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p><strong>On sourcing.</strong> Every entry here is an original wording written to carry an idea, not a quotation. None of these thinkers said these words. Each entry names the concept and the work it derives from so you can go and read the real thing. Where an idea is popularly attributed but not firmly sourced, the attribution line says so.</p>
+    <p><strong>On linking.</strong> Every view has an address. Filter, search or resize and the URL updates &mdash; copy it to send someone that exact slice. Single entries link as <code>#e=bryant-06</code>.</p>
+    <p><strong>Digital Distillation</strong> &middot; <a href="https://github.com/ArtyG-Dev/DigitalDistillation" rel="noopener noreferrer">source on GitHub</a></p>
+  </footer>
+
+</div>
+
+<script src="data/authors.js"></script>
+<script src="data/entries.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
