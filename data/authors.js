@@ -37,5 +37,7 @@ window.DD_AUTHORS = [
   { id: "stevenson",  name: "Bryan Stevenson",       years: "b. 1959",        note: "Lawyer; founder of the Equal Justice Initiative, author of Just Mercy.",          era: "21st century" },
   { id: "wilkerson",  name: "Isabel Wilkerson",      years: "b. 1961",        note: "Journalist and historian; Pulitzer laureate, author of Caste.",                   era: "21st century" },
   { id: "coates",     name: "Ta-Nehisi Coates",      years: "b. 1975",        note: "Essayist and journalist; history, race and the craft of writing.",                era: "21st century" },
-  { id: "adichie",    name: "Chimamanda Ngozi Adichie", years: "b. 1977",     note: "Nigerian novelist and essayist; narrative, voice and the single story.",          era: "21st century" }
+  { id: "adichie",    name: "Chimamanda Ngozi Adichie", years: "b. 1977",     note: "Nigerian novelist and essayist; narrative, voice and the single story.",          era: "21st century" },
+  { id: "peterson",   name: "Jordan B. Peterson",    years: "b. 1962",        note: "Clinical psychologist; responsibility, meaning and order. See README on selection.", era: "21st century" },
+  { id: "voss",       name: "Chris Voss",            years: "b. 1957",        note: "Former FBI lead international kidnapping negotiator; tactical empathy.",       era: "21st century" }
 ];

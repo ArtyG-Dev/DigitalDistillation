@@ -1,6 +1,6 @@
 # Digital Distillation
 
-Daily affirmations distilled from the documented ideas of thirteen thinkers, cross-indexed by
+Daily affirmations distilled from the documented ideas of twenty-eight thinkers, cross-indexed by
 thinker, subject and keyword. Static site, no build step, no dependencies.
 
 ## What this is, precisely
@@ -15,7 +15,7 @@ to yourself.
 Where an idea is popularly attributed but not firmly sourced, the attribution line says so
 rather than asserting it.
 
-## Roster (26 thinkers, 294 entries)
+## Roster (28 thinkers, 310 entries)
 
 Tabs are grouped into four eras. The grouping is a navigation aid, not a taxonomy — several
 21st-century thinkers are also diaspora thinkers, and they appear once, under the era.
@@ -26,7 +26,7 @@ Tabs are grouped into four eras. The grouping is a navigation aid, not a taxonom
 
 **Diaspora thought** — W. E. B. Du Bois (10), Howard Thurman (10), James Baldwin (10), Maya Angelou (10), Toni Morrison (10)
 
-**21st century** — John Hope Bryant (18), Daniel Kahneman (8), Carol Dweck (8), Brené Brown (8), James Clear (8), Cal Newport (8), Nassim Nicholas Taleb (8), Adam Grant (8), Oliver Burkeman (8), Bryan Stevenson (8), Isabel Wilkerson (8), Ta-Nehisi Coates (8), Chimamanda Ngozi Adichie (8)
+**21st century** — John Hope Bryant (18), Daniel Kahneman (8), Carol Dweck (8), Brené Brown (8), James Clear (8), Cal Newport (8), Nassim Nicholas Taleb (8), Adam Grant (8), Oliver Burkeman (8), Bryan Stevenson (8), Isabel Wilkerson (8), Ta-Nehisi Coates (8), Chimamanda Ngozi Adichie (8), Jordan B. Peterson (8), Chris Voss (8)
 
 ### Curation notes
 
@@ -34,11 +34,17 @@ Tabs are grouped into four eras. The grouping is a navigation aid, not a taxonom
 notably the Andrew Carnegie commission, have no corroborating evidence. He is included because
 the ideas were influential, not because the account of their origin is sound.
 
-**The roster deliberately avoids actively contested political ground.** There are 21st-century
-figures with large followings whose work is the subject of live partisan dispute. Including them
-would make the app read as taking a side. The selection favours durable, teachable ideas.
+**The filter is the idea, not the figure.** Some thinkers here are themselves the subject of live
+partisan dispute. The selection rule is applied to the material rather than to the person: an idea
+earns a place if it is documented, durable and teachable on its own terms, and the entries are
+drawn only from that part of the work. Inclusion is not endorsement of everything a thinker has
+said, and no entry is drawn from the contested political commentary any of them are known for.
 
-**Colour cannot carry 26 identities.** Each thinker has a distinct accent, but at 26 the eye
+**Jordan Peterson's public commentary is polarising and largely outside what is distilled here.**
+The eight entries are taken from the clinical and psychological material — responsibility,
+comparison, truthful speech, order and chaos — and not from his political writing or interviews.
+
+**Colour cannot carry 28 identities.** Each thinker has a distinct accent, but at 28 the eye
 cannot reliably tell all of them apart. Colour separates thinkers *within* an era group; the
 author's name appears on every card and in the status line as the actual identifier.
 
