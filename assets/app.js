@@ -79,7 +79,7 @@
     var au = byId[featured.au];
     var hivol = entryCount(featured.au) > HIVOL_MIN;
     var cls = "featured a-" + featured.au;
-    if (au.era === "Diaspora thought") cls += " kente";
+    if (au.era === "Diaspora thought" || au.kente) cls += " kente";
     if (hivol) cls += " hivol";
     host.className = cls;
 
