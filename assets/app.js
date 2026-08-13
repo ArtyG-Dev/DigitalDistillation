@@ -20,8 +20,11 @@
   var VALID_AU = new Set(AUTHORS.map(function (a) { return a.id; }));
   var VALID_S = new Set(ENTRIES.map(function (e) { return e.s; }));
   var VALID_K = new Set(ENTRIES.reduce(function (acc, e) { return acc.concat(e.k); }, []));
+  var VALID_E = new Set(ENTRIES.map(function (e) { return e.id; }));
 
-  var state = { au: "", s: "", k: "", q: "", size: "s" };
+  /* Saved entries live in memory and in the URL (?f=), never in storage — see README.
+     The address bar is the persistence layer: bookmark it and the list comes back. */
+  var state = { au: "", s: "", k: "", q: "", size: "s", f: [], fo: false };
   var featured = ENTRIES[0];
   var HIVOL_MIN = 10; // an author with more entries than this is highlighted as high-volume
   var openEras = {};  // era name -> whether its collapsible tab group is expanded
@@ -35,6 +38,20 @@
     return n;
   }
   function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+
+  function isSaved(id) { return state.f.indexOf(id) !== -1; }
+
+  function saveButton(id) {
+    var on = isSaved(id);
+    var b = el("button", "fav");
+    b.type = "button";
+    b.dataset.fav = id;
+    b.setAttribute("aria-pressed", String(on));
+    b.setAttribute("aria-label", on ? "Saved — remove from your saved quotes" : "Save this quote");
+    b.appendChild(el("span", "heart", on ? "♥" : "♡"));
+    b.appendChild(el("span", null, on ? "Saved" : "Save"));
+    return b;
+  }
 
   /* ---------- selection ---------- */
 
@@ -92,6 +109,7 @@
       head.appendChild(badge);
     }
     head.appendChild(el("span", "grow"));
+    head.appendChild(saveButton(featured.id));
     head.appendChild(el("span", null, featured.id));
     host.appendChild(head);
 
@@ -200,6 +218,7 @@
   }
 
   function matches(e) {
+    if (state.fo && !isSaved(e.id)) return false;
     if (state.au && e.au !== state.au) return false;
     if (state.s && e.s !== state.s) return false;
     if (state.k && e.k.indexOf(state.k) === -1) return false;
@@ -239,6 +258,7 @@
       b.setAttribute("aria-pressed", String(state.k === k));
       foot.appendChild(b);
     });
+    foot.appendChild(saveButton(e.id));
     var cp = el("button", "btn", "Copy");
     cp.type = "button";
     cp.dataset.copy = e.id;
@@ -258,7 +278,12 @@
     $("empty").hidden = list.length > 0;
     $("count").textContent = list.length + (list.length === 1 ? " entry" : " entries");
 
+    var saved = $("saved");
+    saved.setAttribute("aria-pressed", String(state.fo));
+    saved.textContent = "Saved (" + state.f.length + ")";
+
     var bits = [];
+    if (state.fo) bits.push("saved only");
     if (state.au) bits.push("thinker: " + byId[state.au].name);
     if (state.s) bits.push("subject: " + state.s);
     if (state.k) bits.push("keyword: " + state.k);
@@ -285,6 +310,8 @@
     if (state.k) p.set("k", state.k);
     if (state.q) p.set("q", state.q);
     if (state.size !== "s") p.set("t", state.size);
+    if (state.f.length) p.set("f", state.f.join("."));
+    if (state.fo) p.set("fo", "1");
     var h = p.toString();
     history.replaceState(null, "", h ? "#" + h : location.pathname + location.search);
   }
@@ -302,6 +329,14 @@
 
     var q = p.get("q");
     if (q) { state.q = q.slice(0, Q_MAX).replace(/[^\p{L}\p{N}\s'\-]/gu, "").trim(); }
+
+    var f = p.get("f");
+    if (f) {
+      f.split(".").forEach(function (id) {
+        if (VALID_E.has(id) && !isSaved(id)) state.f.push(id);
+      });
+    }
+    if (p.get("fo") === "1") state.fo = true;
 
     var e = p.get("e");
     if (e) {
@@ -332,6 +367,22 @@
     sync();
   });
 
+  function saveHandler(ev) {
+    var b = ev.target.closest(".fav");
+    if (!b) return false;
+    var i = state.f.indexOf(b.dataset.fav);
+    if (i === -1) state.f.push(b.dataset.fav); else state.f.splice(i, 1);
+    paintFeatured();
+    sync();
+    return true;
+  }
+  $("featured").addEventListener("click", saveHandler);
+
+  $("saved").addEventListener("click", function () {
+    state.fo = !state.fo;
+    sync();
+  });
+
   function keywordHandler(ev) {
     var b = ev.target.closest(".kw");
     if (!b) return false;
@@ -342,6 +393,7 @@
   $("keywords").addEventListener("click", keywordHandler);
 
   $("entries").addEventListener("click", function (ev) {
+    if (saveHandler(ev)) return;
     if (keywordHandler(ev)) return;
     var cp = ev.target.closest("[data-copy]");
     if (!cp) return;
@@ -365,7 +417,7 @@
   });
 
   $("clear").addEventListener("click", function () {
-    state.s = ""; state.k = ""; state.q = "";
+    state.s = ""; state.k = ""; state.q = ""; state.fo = false;
     $("q").value = "";
     sync();
   });
