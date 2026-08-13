@@ -152,6 +152,16 @@ details.era-group summary:focus-visible{outline:2px solid var(--ink);outline-off
 .entry .prac{color:var(--ink-soft);max-width:68ch;margin:0 0 10px;font-size:.94rem}
 .entry .prac b,.featured .prac b{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:2px;font-weight:500}
 .foot{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.fav{
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
+  background:transparent;border:1px solid var(--rule);color:var(--ink-soft);
+  padding:3px 7px;cursor:pointer;display:inline-flex;gap:5px;align-items:center;line-height:1.4;
+}
+.fav:hover{border-color:var(--accent);color:var(--accent)}
+.fav[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);font-weight:600}
+.fav .heart{font-size:.9rem;line-height:1}
+.featured-head .fav{letter-spacing:.08em}
+#saved[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .src{font-family:var(--mono);font-size:.64rem;color:var(--ink-soft);border-left:2px solid var(--hair);padding-left:8px;margin-right:auto}
 .empty{padding:40px 4px;color:var(--ink-soft);max-width:52ch}
 .empty strong{font-family:var(--display);font-size:1.2rem;display:block;margin-bottom:5px;color:var(--ink)}
@@ -205,3 +215,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 .a-peterson {--accent:#7A6A15;--tint:#F4F1E0}
 .a-voss     {--accent:#17738A;--tint:#E5F0F3}
 .a-douglass {--accent:#8C2F39;--tint:#F7EAEC}
+.a-chomsky  {--accent:#3A4E7A;--tint:#EAEDF4}
+.a-singer   {--accent:#3E6B2F;--tint:#ECF2E8}
+.a-klein    {--accent:#A8442C;--tint:#F8EDE9}

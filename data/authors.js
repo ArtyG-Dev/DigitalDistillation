@@ -18,6 +18,8 @@ window.DD_AUTHORS = [
   { id: "frankl",     name: "Viktor Frankl",         years: "1905\u20131997", note: "Austrian neurologist and psychiatrist; founder of logotherapy.",                 era: "Critical thought" },
   { id: "drucker",    name: "Peter Drucker",         years: "1909\u20132005", note: "Writer and consultant; effectively invented modern management.",                 era: "Critical thought" },
   { id: "tyson",      name: "Neil deGrasse Tyson",   years: "b. 1958",        note: "Astrophysicist and science communicator; director of the Hayden Planetarium.",    era: "Critical thought" },
+  { id: "chomsky",    name: "Noam Chomsky",          years: "b. 1928",        note: "Linguist and political critic; co-author of the propaganda model.",              era: "Critical thought" },
+  { id: "singer",     name: "Peter Singer",          years: "b. 1946",        note: "Moral philosopher; obligation at a distance and the interests of animals.",      era: "Critical thought" },
 
   { id: "douglass",   name: "Frederick Douglass",    years: "1818\u20131895", note: "Abolitionist, orator and memoirist; escaped slavery and argued the nation into its own creed.", era: "Diaspora thought" },
   { id: "dubois",     name: "W. E. B. Du Bois",      years: "1868\u20131963", note: "Sociologist and historian; first Black doctorate from Harvard.",                 era: "Diaspora thought" },
@@ -40,5 +42,6 @@ window.DD_AUTHORS = [
   { id: "coates",     name: "Ta-Nehisi Coates",      years: "b. 1975",        note: "Essayist and journalist; history, race and the craft of writing.",                era: "21st century", kente: true },
   { id: "adichie",    name: "Chimamanda Ngozi Adichie", years: "b. 1977",     note: "Nigerian novelist and essayist; narrative, voice and the single story.",          era: "21st century", kente: true },
   { id: "peterson",   name: "Jordan B. Peterson",    years: "b. 1962",        note: "Clinical psychologist; responsibility, meaning and order. See README on selection.", era: "21st century" },
-  { id: "voss",       name: "Chris Voss",            years: "b. 1957",        note: "Former FBI lead international kidnapping negotiator; tactical empathy.",       era: "21st century" }
+  { id: "voss",       name: "Chris Voss",            years: "b. 1957",        note: "Former FBI lead international kidnapping negotiator; tactical empathy.",       era: "21st century" },
+  { id: "klein",      name: "Naomi Klein",           years: "b. 1970",        note: "Canadian journalist and author; branding, crisis politics and climate.",        era: "21st century" }
 ];
