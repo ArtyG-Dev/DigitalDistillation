@@ -41,3 +41,6 @@ this corpus — the whole project depends on that line holding.
 node tools/build-entries.js
 grep -rn "innerHTML\|eval(\|localStorage\|sessionStorage\|http://" index.html assets data   # expect no hits
 ```
+If you changed anything under `assets/` or `data/`, bump the shared `?v=` number on every
+asset link in `index.html`. GitHub Pages serves those files with a long cache lifetime, so
+without a bump returning visitors get the old CSS/JS against the new HTML.
