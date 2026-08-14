@@ -185,6 +185,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
   .featured .prac{margin-top:8px}
 }
 
+/* ---- distilled-entry marker ---- */
+.distil-mark{text-decoration:none;color:inherit}
+.distil-mark sup{
+  font-size:.62em;font-weight:700;line-height:0;margin-left:.15em;padding:.15em .3em;
+  border-radius:.25em;background:var(--accent);color:var(--card,#fff);vertical-align:super;
+}
+.distil-mark:hover sup,.distil-mark:focus-visible sup{background:var(--ink)}
+.distil-mark:focus-visible{outline:2px solid currentColor;outline-offset:2px;border-radius:.25em}
+.distil-key{margin-top:.6em;font-size:.75rem;opacity:.7;letter-spacing:.01em}
+.distil-key span{font-weight:700}
+
 /* ---- author palette: one rule per author id ---- */
 .a-rohn    {--accent:#8E2A1E;--tint:#F6EBE8}
 .a-bryant  {--accent:#1A6B57;--tint:#E6F1ED}
@@ -211,7 +222,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 .a-stevenson{--accent:#14705F;--tint:#E4F0ED}
 .a-wilkerson{--accent:#7D4A8C;--tint:#F2EAF5}
 .a-coates   {--accent:#24425C;--tint:#E7ECF1}
-.a-adichie  {--accent:#B5651D;--tint:#F9EFE3}
+.a-adichie  {--accent:#AC601C;--tint:#F9EFE3}
 .a-peterson {--accent:#7A6A15;--tint:#F4F1E0}
 .a-voss     {--accent:#17738A;--tint:#E5F0F3}
 .a-douglass {--accent:#8C2F39;--tint:#F7EAEC}
