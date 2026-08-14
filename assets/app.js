@@ -39,6 +39,34 @@
   }
   function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
 
+  /* Every entry is an original wording, never a quotation. The marker rides on the
+     author name so the signal travels with deep-linked and shared entries. */
+  function distilMark() {
+    var a = el("a", "distil-mark");
+    a.href = "#sourcing";
+    a.setAttribute("aria-label", "Distilled — an original wording, not a quotation. See sourcing note.");
+    a.title = "Distilled — an original wording, not a quotation.";
+    var s = el("sup", null, "D");
+    s.setAttribute("aria-hidden", "true");
+    a.appendChild(s);
+    return a;
+  }
+
+  function whoName(name) {
+    var w = el("span", "who", name);
+    w.appendChild(distilMark());
+    return w;
+  }
+
+  function distilKey() {
+    var p = el("p", "distil-key");
+    var s = el("span", null, "D");
+    s.setAttribute("aria-hidden", "true");
+    p.appendChild(s);
+    p.appendChild(document.createTextNode(" Distilled — original wording, not a quotation."));
+    return p;
+  }
+
   function isSaved(id) { return state.f.indexOf(id) !== -1; }
 
   function saveButton(id) {
@@ -101,7 +129,7 @@
     host.className = cls;
 
     var head = el("div", "featured-head");
-    head.appendChild(el("span", "who", au.name));
+    head.appendChild(whoName(au.name));
     head.appendChild(el("span", null, featured.s));
     if (hivol) {
       var badge = el("span", "badge", "Extensive");
@@ -123,6 +151,7 @@
     host.appendChild(pr);
 
     host.appendChild(el("p", "attrib", featured.src + "  \u00b7  " + au.years));
+    host.appendChild(distilKey());
   }
 
   function paintTabs() {
@@ -237,7 +266,7 @@
     li.id = e.id;
 
     var meta = el("div", "meta");
-    meta.appendChild(el("span", "who", au.name));
+    meta.appendChild(whoName(au.name));
     meta.appendChild(el("span", null, e.s));
     meta.appendChild(el("span", null, e.id));
     li.appendChild(meta);
@@ -264,6 +293,7 @@
     cp.dataset.copy = e.id;
     foot.appendChild(cp);
     li.appendChild(foot);
+    li.appendChild(distilKey());
     return li;
   }
 

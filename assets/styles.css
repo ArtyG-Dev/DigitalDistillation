@@ -185,6 +185,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
   .featured .prac{margin-top:8px}
 }
 
+/* ---- distilled-entry marker ---- */
+.distil-mark{text-decoration:none;color:inherit}
+.distil-mark sup{
+  font-size:.62em;font-weight:700;line-height:0;margin-left:.15em;padding:.15em .3em;
+  border-radius:.25em;background:var(--accent);color:var(--card,#fff);opacity:.7;vertical-align:super;
+}
+.distil-mark:hover sup,.distil-mark:focus-visible sup{opacity:1}
+.distil-mark:focus-visible{outline:2px solid currentColor;outline-offset:2px;border-radius:.25em}
+.distil-key{margin-top:.6em;font-size:.75rem;opacity:.7;letter-spacing:.01em}
+.distil-key span{font-weight:700}
+
 /* ---- author palette: one rule per author id ---- */
 .a-rohn    {--accent:#8E2A1E;--tint:#F6EBE8}
 .a-bryant  {--accent:#1A6B57;--tint:#E6F1ED}
