@@ -104,6 +104,11 @@ details.era-group summary:focus-visible{outline:2px solid var(--ink);outline-off
   background:transparent;border:1px solid var(--rule);color:var(--ink-soft);padding:9px 13px;cursor:pointer;
 }
 .btn:hover{border-color:var(--ink);color:var(--ink)}
+#shuffle{
+  background:radial-gradient(circle at 50% 0%,#F9E8AD 0%,#F9D999 55%,#F2C287 100%);
+  border:1px solid var(--rule);color:#1B1D22;font-weight:700;
+}
+#shuffle:hover{background:radial-gradient(circle at 50% 0%,#FCE28C 0%,#FCCD6E 55%,#F1AA53 100%);border-color:var(--rule);color:#1B1D22}
 .sizer{display:flex;align-items:center;gap:0;border:1px solid var(--rule);background:var(--card)}
 .sizer .lbl{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);padding:0 11px}
 .sizer button{font-family:var(--body);background:transparent;border:0;border-left:1px solid var(--hair);color:var(--ink-soft);cursor:pointer;padding:9px 12px;line-height:1}
